@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .skewed {
+            background: linear-gradient(120deg, white 15px, red 0);
+            width: 100px;
+            height: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .test1 {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .test1::after {
+            content: "";
+            width: 200%;
+            height: 200%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid red;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            box-sizing: border-box;
+        }
+
+        /* .test1 {
+            background-image: -webkit-linear-gradient(0deg, red, red 50%, transparent 50%);
+            background-image: linear-gradient(0deg, red, red 50%, transparent 50%);
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="skewed"></div>
+    <div class="test1" onclick="javascript:alert(123)"></div>
+    <script src="./curry.js"></script>
+</body>
+
+</html>
