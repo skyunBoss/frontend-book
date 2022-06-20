@@ -1,3 +1,5 @@
+// https://fe.azhubaby.com/React/%E9%9D%A2%E8%AF%95%E9%A2%98/
+
 // super()和super(props)区别
 // 使用constructor构造函数，super()为了初始化this。若在constructor中调用this.props，则需要super(props)
 
@@ -51,6 +53,7 @@
 // 更新的时候能够暂停，终止，复用渲染任务
 // 给不同类型的更新赋予优先级
 // fiber架构就是把一个耗时长的任务分解成一个个工作单元（每个工作单元运行时间很短，不过总时间依然很长）。在执行每个工作单元前，由浏览器判断是否有空余时间执行，有时间就执行工作单元，执行完成后，继续判断是否有空余时间执行下一个工作单元，如果没有时间就终止执行让浏览器执行其他任务（如GUI线程等）。等到下一帧执行时判断是否有空余时间，有时间就从终止的地方继续执行工作单元，一直重复到任务结束
+// GUI渲染线程负责渲染浏览器界面，解析html、css，构建dom
 
 // 虚拟dom（Virtual Dom）
 // 虚拟dom是react的fiber，diff算法是react的协调
@@ -64,6 +67,9 @@
 
 // react diff 特点
 // 仅向右移动
+
+// useMemo实现原理
+// https://github.com/brickspert/blog/issues/26
 
 // hooks实现封装异步请求
 import { useCallback, useEffect, useState } from "react";
