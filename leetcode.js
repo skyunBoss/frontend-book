@@ -158,7 +158,7 @@ function missingNumber(arr) {
 missingNumber([1, 2, 3, 4, 5, 6, 8, 9]);
 
 // LRU缓存算法
-// Least Recently Used 最近最少适用
+// Least Recently Used 最近最少使用
 class LRUCache {
     constructor(length) {
         this.length = length;

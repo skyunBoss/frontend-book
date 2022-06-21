@@ -71,6 +71,15 @@
 // useMemo实现原理
 // https://github.com/brickspert/blog/issues/26
 
+// React 是如何区分 class 和 function
+class Component {}
+Component.prototype.isReactComponent = {};
+
+// 为什么useRef可以保存最新值
+// 解决useState的闭包问题（比如定时器取值一直是旧值）
+// useRef作用：多次渲染之间的状态变化、获取dom元素
+// 每次组件更新ref都是指向同一个引用地址
+
 // hooks实现封装异步请求
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
