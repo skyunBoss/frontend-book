@@ -20,6 +20,9 @@ Function.prototype._bind = function(obj, ...args) {
     return bound;
 }
 
+// bind传入两次this，执行哪个this
+// 第一次绑定完this返回一个函数，后续再绑定多少次都无效，但是后面传入的参数会生效
+
 // new的过程，其返回的是一个对象
 function _new(constr, ...args) {
     // 创建一个空对象
