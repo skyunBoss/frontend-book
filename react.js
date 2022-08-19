@@ -1,4 +1,6 @@
 // https://fe.azhubaby.com/React/%E9%9D%A2%E8%AF%95%E9%A2%98/
+// https://react.iamkasong.com/
+// https://github.com/7kms/react-illustration-series
 
 // super()和super(props)区别
 // 使用constructor构造函数，super()为了初始化this。若在constructor中调用this.props，则需要super(props)
@@ -18,6 +20,10 @@
 // 工作遇到问题
 //  1、使用不合理，反而会使性能下降
 //  2、依赖state变更解决闭包问题，那么就失去函数本身的意义。可以通过useRef实例存储state
+// 依赖项通过Object.is比较，Object.is引用比较
+
+// useMemo 和 useCallback的区别
+// useCallback返回一个函数，useMemo返回的的是一个值
 
 // hooks优势
 // 可读性高，也易于维护
@@ -39,6 +45,7 @@
 
 // hooks 原理
 // 源码解析图：https://upload-images.jianshu.io/upload_images/14361446-21c256663f9ea235.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp
+// 将相应函数组件使用Hooks产生的状态逻辑通过链表的数据结构挂载到对应的函数组件的Fiber节点上，useState基于useReducer实现，useReducer里面返回的dispatch函数是通过闭包的形式把相应的Fiber节点进行了缓存，后来调用的dispatch函数时，对应函数组件的Fiber节点进行更新
 
 // 高阶函数
 // 函数接收的参数为函数，也可以返回一个函数的函数
@@ -127,3 +134,16 @@ const useRequest = (url, data, config) => {
 }
 
 export default useRequest;
+
+// React的setState本身并不是异步的，是因为其批处理机制给人一种异步的假象。
+// 生命周期函数和合成事件中：
+// 无论调用多少次setState，都不会立即执行更新。而是将要更新的state存入'_pendingStateQuene',将要更新的组件存入'dirtyComponent';
+// 当根组件didMount后，批处理机制更新为false。此时再取出'_pendingStateQuene'和'dirtyComponent'中的state和组件进行合并更新；
+// 原生事件和异步代码中：
+// 原生事件不会触发react的批处理机制，因而调用setState会直接更新；
+// 异步代码中调用setState，由于js的异步处理机制，异步代码会暂存，等待同步代码执行完毕再执行，此时react的批处理机制已经结束，因而直接更新。
+// 总结：
+// react会表现出同步和异步的现象，但本质上是同步的，是其批处理机制造成了一种异步的假象。（其实完全可以在开发过程中，在合成事件和生命周期函数里，完全可以将其视为异步）
+
+// Profiler
+// 监测组件渲染次数

@@ -18,6 +18,13 @@
 //  null和undefined没有constructor
 //  (123).constructor
 
+// this指向
+// this永远指向一个对象
+// this的指向完全取决于函数调用的位置
+
+// 严格模式
+// 目的是更合理、更安全、更严谨
+
 // 0.1+0.2 !== 0.3
 // 浮点数转二进制时丢失了精度，计算完再转回十进制时和理论结果不同
 function add(num1, num2) {
@@ -37,6 +44,10 @@ function add(num1, num2) {
 
 // cookie 和 token的区别
 // token支持跨域访问，cookie不允许跨域访问
+
+// cookie 和 session的区别
+// cookie存在客户端，session存在服务端
+// session 可以放在 文件、数据库、或内存中都可以
 
 // 跨域请求带cookies
 // 设置withCredentials true

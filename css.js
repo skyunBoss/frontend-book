@@ -20,6 +20,7 @@
 // justify-content：子容器在主轴的排列方向，默认值flex-start
 // align-items：子容器在交叉轴的排列方向，默认值stretch
 // align-content：多根轴线的对齐方式，默认值stretch
+// gap：间距
 
 // flex子容器属性
 // order：子容器的排列顺序
@@ -91,3 +92,35 @@
 // px是固定像素，一旦设置就无法因适应页面大小而改变
 // em和rem是相对长度单位，更适合响应式布局
 // em相对于父元素，rem相对于根元素
+
+// 为什么 marign 0 auto 无法垂直居中
+// margin-left+border-left-width+padding-left+width+padding-right+border-right-width+margin-right= width of containing block
+// 当左右的margin都设置为auto时，会将一行的剩余空间平均分配给左右边距
+// 垂直方向上，块级元素不会自动扩充，它的外部尺寸没有自动充满父元素，也没有剩余空间可说
+// 行内元素margin:auto既不能水平居中也不能垂直居中，因为行内元素水平垂直方向上默认都没有剩余的空间
+
+// 移动端 1px 像素如何解决
+// DPR（devicePixelRatio）设备像素比，它是默认缩放为100%的情况下，设备像素和CSS像素的比值，目前主流屏幕DPR=2，css=0.5
+// window.devicePixelRatio=物理像素 /CSS像素
+// border: 0.5px solid #ccc
+// 使用无边框图片：border-image: url('./../../image/96.jpg') 2 repeat;
+// 使用box-shadow实现
+// 使用伪元素
+// .setOnePx{
+//   position: relative;
+//   &::after{
+//     position: absolute;
+//     content: '';
+//     background-color: #e5e5e5;
+//     display: block;
+//     width: 100%;
+//     height: 1px; /*no*/
+//     transform: scale(1, 0.5);
+//     top: 0;
+//     left: 0;
+//   }
+// }
+
+// 伪类与伪元素的区别
+// 伪类和伪元素分别用单冒号:和双冒号::来表示
+// 伪类和伪元素都是用来表示文档树以外的"元素"

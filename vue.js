@@ -11,6 +11,9 @@
 // 8、destroyed/unmounted（销毁后） ：实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务端渲染期间不被调用，通常用于清理它与其它实例的连接、解绑它的全部指令及事件监听器。
 // 另外还有 `keep-alive` 独有的生命周期，分别为 `activated` 和 `deactivated` 。用 `keep-alive` 包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行 `deactivated` 钩子函数，命中缓存渲染后会执行 `activated` 钩子函数。
 
+// 父子生命周期
+// 子mouted优先父mouted
+
 // computed和watch区别
 // 区别
 //   computed 计算属性：依赖其它属性值，并且computed的值有缓存，只有它依赖的属性值发生改变，下一次获取computed的值时才会重新计算computed的值。
@@ -229,3 +232,12 @@ export default {
 //  compile，如何把真实DOM编译成vnode虚拟节点对象。（通过h函数）
 //  diff，通过算法，我们要如何知道oldVnode和newVnode之间有什么变化。（内部diff算法）
 //  patch， 如果把这些变化用打补丁的方式更新到真实dom上去。
+
+// 实现最简 vue3 模型，用于深入学习 vue3， 让你更轻松的理解 vue3 的核心逻辑
+
+// 实现最简 vue3 模型，用于深入学习 vue3， 让你更轻松的理解 vue3 的核心逻辑
+// https://github.com/cuixiaorui/mini-vue
+
+// vue3 ref toRef toRefs区别
+// ref本质是深拷贝，与原始数据没有引用关系
+// toRef本质是引用，与原始数据有关联

@@ -1,6 +1,6 @@
 // 浅拷贝
 // 只拷贝引用，新旧对象共享一块内存，所以改变新对象后，旧对象也会改变
-// Object.assign()
+// Object.assign()：Object.assgin 只能深拷贝第一层, 深层的还是浅拷贝
 // concat
 // slice
 // 解构
