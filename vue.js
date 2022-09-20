@@ -234,10 +234,13 @@ export default {
 //  patch， 如果把这些变化用打补丁的方式更新到真实dom上去。
 
 // 实现最简 vue3 模型，用于深入学习 vue3， 让你更轻松的理解 vue3 的核心逻辑
-
-// 实现最简 vue3 模型，用于深入学习 vue3， 让你更轻松的理解 vue3 的核心逻辑
 // https://github.com/cuixiaorui/mini-vue
 
 // vue3 ref toRef toRefs区别
 // ref本质是深拷贝，与原始数据没有引用关系
 // toRef本质是引用，与原始数据有关联
+
+// vue3响应式原理
+// vue3通过proxy拦截数据的读取和设置，当读取数据时，通过track函数触发依赖的收集，当设置数据时，通过trigger函数取派发更新
+
+// template转换

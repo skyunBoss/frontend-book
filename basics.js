@@ -41,6 +41,7 @@ function add(num1, num2) {
 // sessionStorage和localStorage仅保存在本地，不会将数据发送到服务器
 // cookie的存储大小不会超过4k，而sessionStorage和localStorage的存储空间为5M的字符数
 // cookie在过期时间内有效、sessionStorage在关闭浏览器窗口前有效、localStorage持久有效
+// 都不可跨域
 
 // cookie 和 token的区别
 // token支持跨域访问，cookie不允许跨域访问
@@ -254,3 +255,14 @@ iterator3.next();
 //      订阅者把自己想订阅的事件注册到调度中心，当发布者发布该事件到调度中心，也就是该事件触发时，由调度中心统一调度订阅者注册到调度中心的事件
 //  代理模式
 //  装饰器模式
+
+// 快数组 慢数组
+// https://juejin.cn/post/6844903943638794248
+// 数组类型不一致
+
+// 实现let const
+// 通过匿名函数
+(function(){
+  var a = 1;
+  console.log('内部a:', a);
+})();
